@@ -29,5 +29,9 @@ use Illuminate\Support\Carbon;
  */
 class Proxy extends Model
 {
+    public const ANONYMITY_ANONYMOUS = 1;
+    public const ANONYMITY_NO = 2;
+    public const ANONYMITY_HEIGHT = 3;
+
     protected $fillable = ['ip_address', 'port', 'protocol', 'country', 'anonymity'];
 }
