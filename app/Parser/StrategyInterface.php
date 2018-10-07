@@ -9,8 +9,6 @@ use Illuminate\Support\Collection;
  */
 interface StrategyInterface
 {
-    public static function getName(): string;
-
     /**
      * @param string $url
      * @return Collection|Item[]

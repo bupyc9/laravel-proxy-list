@@ -17,11 +17,6 @@ use Symfony\Component\DomCrawler\Crawler;
  */
 class FreeProxyListStrategy implements StrategyInterface
 {
-    public static function getName(): string
-    {
-        return 'free-proxy-list';
-    }
-
     /**
      * @param string $url
      * @return Collection|Item[]
