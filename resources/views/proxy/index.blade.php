@@ -6,7 +6,7 @@
 @section('content')
     <div class="container meme_choose-template">
         <div class="row">
-            <form action="{{route('proxyIndex')}}" method="get" class="w-100">
+            <form action="{{route('proxies.index')}}" method="get" class="w-100">
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="country">Country</label>

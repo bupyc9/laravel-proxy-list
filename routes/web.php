@@ -11,4 +11,4 @@
 |
 */
 
-Route::get('/', 'ProxyController@index')->name('proxyIndex');
+Route::get('/', 'ProxyController@index')->name('proxies.index');
