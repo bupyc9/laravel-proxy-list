@@ -32,6 +32,8 @@ class CheckProxy extends Model
 
     protected $fillable = ['checked_at', 'status'];
 
+    protected $dates = ['checked_at'];
+
     public function proxy(): BelongsTo
     {
         return $this->belongsTo(Proxy::class);
