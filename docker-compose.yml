@@ -66,6 +66,21 @@ services:
     networks:
       - default
 
+  horizon:
+    build:
+      context: ./docker/php-cli
+      args:
+        - INSTALL_REDIS=true
+    volumes:
+      - ./:/var/www:cached
+    working_dir: /var/www
+    command: php artisan horizon
+    depends_on:
+      - redis
+      - mariadb
+    networks:
+      - default
+
   node:
     image: node:8
     volumes:

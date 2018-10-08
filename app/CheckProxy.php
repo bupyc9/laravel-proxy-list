@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
 
 /**
@@ -22,8 +23,17 @@ use Illuminate\Support\Carbon;
  * @method static Builder|self whereStatus($value)
  * @method static Builder|self whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property-read Proxy $proxy
  */
 class CheckProxy extends Model
 {
-    //
+    public const STATUS_OK = 100;
+    public const STATUS_BAD = 200;
+
+    protected $fillable = ['checked_at', 'status'];
+
+    public function proxy(): BelongsTo
+    {
+        return $this->belongsTo(Proxy::class);
+    }
 }

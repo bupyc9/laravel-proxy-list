@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Support\Carbon;
 
 /**
@@ -26,6 +27,7 @@ use Illuminate\Support\Carbon;
  * @method static Builder|self wherePort($value)
  * @method static Builder|self whereProtocol($value)
  * @method static Builder|self whereUpdatedAt($value)
+ * @property-read CheckProxy|null $checkProxy
  */
 class Proxy extends Model
 {
@@ -34,4 +36,9 @@ class Proxy extends Model
     public const ANONYMITY_HEIGHT = 3;
 
     protected $fillable = ['ip_address', 'port', 'protocol', 'country', 'anonymity'];
+
+    public function checkProxy(): HasOne
+    {
+        return $this->hasOne(CheckProxy::class);
+    }
 }
